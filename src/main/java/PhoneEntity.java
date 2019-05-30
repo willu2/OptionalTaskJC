@@ -1,4 +1,4 @@
-import java.util.concurrent.TimeUnit;
+import java.time.LocalTime;
 
 public class PhoneEntity {
     int id;
@@ -9,8 +9,8 @@ public class PhoneEntity {
     long creditCardNum;
     long debet;
     long credit;
-    TimeUnit contryTime;
-    TimeUnit distanceCallsTime;
+    LocalTime contryTime;
+    LocalTime distanceCallsTime;
 
     public PhoneEntity(String adress) {
         this.adress = adress;
@@ -28,7 +28,7 @@ public class PhoneEntity {
         this.credit = credit;
     }
 
-    public PhoneEntity(TimeUnit contryTime, TimeUnit distanceCallsTime) {
+    public PhoneEntity(LocalTime contryTime, LocalTime distanceCallsTime) {
         this.contryTime = contryTime;
         this.distanceCallsTime = distanceCallsTime;
     }
