@@ -1,6 +1,10 @@
+package randgenerators;
+
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Random;
 
 public class RandomGenerator {
@@ -10,23 +14,18 @@ public class RandomGenerator {
 
     public void generateRandTime(){
     Random generator = new Random(599999);
-    /*LocalTime time = LocalTime.MIN.plusSeconds(generator.nextLong());
-        System.out.println(time);*/
+        SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "yyyy-MM-dd hh:mm:ss");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+        DateTimeFormatter formatterMin = DateTimeFormatter.ofPattern("mm");
 
         for (int i = 0; i < 4; i++) {
             LocalDateTime time = LocalDateTime.of(LocalDate.now(),
                     LocalTime.of(generator.nextInt(24), generator.nextInt(60),
                             generator.nextInt(60), generator.nextInt(999999999 + 1)));
-            System.out.println(time);
+            System.out.println(time.format(formatterMin));
         }
     }
-
-    public void generateRandAdrress(){
-        String adressName;
-        Random r = new Random();
-        char c = (char)(r.nextInt(26) + 'a');
-    }
-
 
     public String randomStritName(int length) {
         Random random = new Random();
