@@ -12,8 +12,8 @@ public class RandomGenerator {
     public RandomGenerator() {
     }
 
-    public void generateTime(){
-    Random generator = new Random(599999);
+    public String generateTime(){
+    Random generator = new Random(/*599999*/);
         SimpleDateFormat dateFormat = new SimpleDateFormat(
                 "yyyy-MM-dd hh:mm:ss");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
@@ -23,8 +23,9 @@ public class RandomGenerator {
             LocalDateTime time = LocalDateTime.of(LocalDate.now(),
                     LocalTime.of(generator.nextInt(24), generator.nextInt(60),
                             generator.nextInt(60), generator.nextInt(999999999 + 1)));
-            System.out.println(time.format(formatterMin));
+            //System.out.println(time.format(formatterMin));
         //}
+        return time.format(formatterMin);
     }
 
     public String generStrit(int length) {
@@ -41,11 +42,13 @@ public class RandomGenerator {
     }
 
     public int generDebit(boolean debit) {
+        int money;
         Random generator = new Random();
         if(debit){
-            return generator.nextInt(8000);
+            money = generator.nextInt(5000);
         }else {
-            return generator.nextInt(6000);
+            money = generator.nextInt(3500);
         }
+        return money;
     }
 }

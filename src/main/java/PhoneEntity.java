@@ -1,7 +1,7 @@
 import java.time.LocalTime;
 
 public class PhoneEntity {
-    static int id;
+    private int id;
     private String name;        //done
     private String sourname;    //done
     private String patronymic;  //done
@@ -10,8 +10,8 @@ public class PhoneEntity {
     private int debet;      // <----money
     private int credit;     // money---->
 
-    private LocalTime contryCallsTime;  //done
-    private LocalTime distanceCallsTime;  //done
+    private String contryCallsTime;  //done
+    private String distanceCallsTime;  //done
 
     public PhoneEntity(String adress) {
         this.adress = adress;
@@ -30,7 +30,7 @@ public class PhoneEntity {
         this.credit = credit;
     }
 
-    public PhoneEntity(LocalTime contryTime, LocalTime distanceCallsTime) {
+    public PhoneEntity(String contryTime, String distanceCallsTime) {
         this.contryCallsTime = contryTime;
         this.distanceCallsTime = distanceCallsTime;
     }
@@ -39,7 +39,7 @@ public class PhoneEntity {
         return id;
     }
 
-    private void setId(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -99,19 +99,19 @@ public class PhoneEntity {
         this.credit = credit;
     }
 
-    public LocalTime getContryCallsTime() {
+    public String getContryCallsTime() {
         return contryCallsTime;
     }
 
-    public void setContryCallsTime(LocalTime contryCallsTime) {
+    public void setContryCallsTime(String contryCallsTime) {
         this.contryCallsTime = contryCallsTime;
     }
 
-    public LocalTime getDistanceCallsTime() {
+    public String getDistanceCallsTime() {
         return distanceCallsTime;
     }
 
-    public void setDistanceCallsTime(LocalTime distanceCallsTime) {
+    public void setDistanceCallsTime(String distanceCallsTime) {
         this.distanceCallsTime = distanceCallsTime;
     }
 

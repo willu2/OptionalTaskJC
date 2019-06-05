@@ -5,28 +5,33 @@ import java.util.ArrayList;
 
 public class ServiceData {
 
-    private ArrayList clients;
+    private ArrayList<PhoneEntity> clients;
     private RandomGenerator gen;
     private NamesGenerator namesGen;
-    private CreditCardGen creditCardGen;
 
     PhoneEntity client;
+    public static int id = 1;
 
     public ServiceData() {
         clients = new ArrayList<PhoneEntity>();
         gen = new RandomGenerator();
         namesGen = new NamesGenerator();
+        fullDb();
     }
 
     private void createClient(){
         client = new PhoneEntity(namesGen.getName(), namesGen.getLastName(), namesGen.getPatronymic());
+        client.setId(id++);
         addAdress();
         addCard();
         addDebitCredit();
+        addCountryTime();
+        addDistanceTime();
+        clients.add(client);
     }
 
     private void addAdress(){
-        client.setAdress(gen.generStrit(10));
+        client.setAdress(gen.generStrit(12));
     }
 
     private void addCard(){
@@ -38,5 +43,34 @@ public class ServiceData {
         client.setCredit(gen.generDebit(false));
     }
 
+    private void addCountryTime(){
+        client.setContryCallsTime(gen.generateTime());
+    }
 
+    private void addDistanceTime(){
+        client.setDistanceCallsTime(gen.generateTime());
+    }
+
+    private void fullDb(){
+        for (int i = 0; i < 40; i++) {
+            createClient();
+        }
+    }
+
+    public void clientVisor(){
+        for(PhoneEntity client : clients){
+            System.out.println(" ");
+            System.out.println("Id " + client.getId());
+            System.out.println("Name " + client.getName());
+            System.out.println("Sourname " + client.getSourname());
+            System.out.println("Patronymic " + client.getPatronymic());
+            System.out.println("Debet " + client.getDebet() + " USD");
+            System.out.println("Credit " + client.getCredit() + " USD");
+            System.out.println("CardNum " + client.getCreditCardNum());
+            System.out.println("ContryTime " + client.getContryCallsTime() + " min");
+            System.out.println("DistanceTime " + client.getDistanceCallsTime() + " min");
+            System.out.println("--------------");
+            System.out.println("**************");
+        }
+    }
 }
