@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Stack;
 import java.util.Vector;
 
-public class RandomCreditCardNumberGenerator {
+public class CreditCardGen {
 
     public static final String[] MASTERCARD_PREFIX_LIST = new String[] { "51",
             "52", "53", "54", "55", "2221", "2222", "2223", "2224", "2225", "2226", "2227", "2228", "2229", "223", "224", "225", "226", "227", "228", "229", "23", "24", "25", "26", "270", "271", "2720" };
@@ -90,11 +90,11 @@ public class RandomCreditCardNumberGenerator {
         return result.toArray(new String[result.size()]);
     }
 
-    public static String[] generateMasterCardNumbers(int howMany) {
+    public static String[] genMasterCardNumbers(int howMany) {
         return credit_card_number(MASTERCARD_PREFIX_LIST, 16, howMany);
     }
 
-    public static String generateMasterCardNumber() {
+    public static String genMasterCardNumber() {
         return credit_card_number(MASTERCARD_PREFIX_LIST, 16, 1)[0];
     }
 

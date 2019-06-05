@@ -1,29 +1,30 @@
 import java.time.LocalTime;
 
 public class PhoneEntity {
-    int id;
-    private String name;
-    private String sourname;
-    private String patronymic;
-    private String adress;
-    private long creditCardNum;
-    private long debet;
-    private long credit;
+    static int id;
+    private String name;        //done
+    private String sourname;    //done
+    private String patronymic;  //done
+    private String adress;      //done
+    private String creditCardNum; //done
+    private int debet;      // <----money
+    private int credit;     // money---->
 
-    private LocalTime contryCallsTime;
-    private LocalTime distanceCallsTime;
+    private LocalTime contryCallsTime;  //done
+    private LocalTime distanceCallsTime;  //done
 
     public PhoneEntity(String adress) {
         this.adress = adress;
     }
 
     public PhoneEntity(String name, String sourname, String patronymic) {
+        this.setId(++id);
         this.name = name;
         this.sourname = sourname;
         this.patronymic = patronymic;
     }
 
-    public PhoneEntity(long creditCardNum, long debet, long credit) {
+    public PhoneEntity(String creditCardNum, int debet, int credit) {
         this.creditCardNum = creditCardNum;
         this.debet = debet;
         this.credit = credit;
@@ -38,7 +39,7 @@ public class PhoneEntity {
         return id;
     }
 
-    public void setId(int id) {
+    private void setId(int id) {
         this.id = id;
     }
 
@@ -74,27 +75,27 @@ public class PhoneEntity {
         this.adress = adress;
     }
 
-    public long getCreditCardNum() {
+    public String getCreditCardNum() {
         return creditCardNum;
     }
 
-    public void setCreditCardNum(long creditCardNum) {
+    public void setCreditCardNum(String creditCardNum) {
         this.creditCardNum = creditCardNum;
     }
 
-    public long getDebet() {
+    public double getDebet() {
         return debet;
     }
 
-    public void setDebet(long debet) {
+    public void setDebet(int debet) {
         this.debet = debet;
     }
 
-    public long getCredit() {
+    public double getCredit() {
         return credit;
     }
 
-    public void setCredit(long credit) {
+    public void setCredit(int credit) {
         this.credit = credit;
     }
 

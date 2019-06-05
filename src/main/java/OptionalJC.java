@@ -1,4 +1,3 @@
-import randgenerators.RandomCreditCardNumberGenerator;
 import randgenerators.RandomGenerator;
 
 public class OptionalJC {
@@ -7,17 +6,16 @@ public class OptionalJC {
         RandomGenerator generator = new RandomGenerator();
        // generator.generateRandTime();
 
-       // System.out.println(generator.randomStritName(12));
+        //System.out.println(generator.generateRandStritName(12));
 
 
-        RandomCreditCardNumberGenerator randomCred = new RandomCreditCardNumberGenerator();
+       /* CreditCardGen randomCred = new CreditCardGen();
 
-        String creditcardnumber = RandomCreditCardNumberGenerator.generateMasterCardNumber();
+        String creditcardnumber = CreditCardGen.generateMasterCardNumber();
             System.out.println(creditcardnumber
                     + ":"
-                    + (RandomCreditCardNumberGenerator.isValidCreditCardNumber(creditcardnumber) ? "valid"
-                    : "invalid"));
+                    + (CreditCardGen.isValidCreditCardNumber(creditcardnumber) ? "valid"
+                    : "invalid"));*/
         }
-
     }
 
