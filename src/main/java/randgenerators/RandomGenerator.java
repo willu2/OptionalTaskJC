@@ -51,4 +51,9 @@ public class RandomGenerator {
         }
         return money;
     }
+
+    public boolean randBool(){
+        Random r = new Random();
+        return r.nextBoolean();
+    }
 }

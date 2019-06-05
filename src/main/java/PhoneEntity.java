@@ -1,6 +1,4 @@
-import java.time.LocalTime;
-
-public class PhoneEntity {
+public class PhoneEntity implements Comparable<PhoneEntity>{
     private int id;
     private String name;        //done
     private String sourname;    //done
@@ -12,6 +10,8 @@ public class PhoneEntity {
 
     private String contryCallsTime;  //done
     private String distanceCallsTime;  //done
+
+    private boolean abroad = false;
 
     public PhoneEntity(String adress) {
         this.adress = adress;
@@ -115,6 +115,14 @@ public class PhoneEntity {
         this.distanceCallsTime = distanceCallsTime;
     }
 
+    public boolean isAbroad() {
+        return abroad;
+    }
+
+    public void setAbroad(boolean abroad) {
+        this.abroad = abroad;
+    }
+
     @Override
     public String toString() {
         return "PhoneEntity{" +
@@ -129,5 +137,10 @@ public class PhoneEntity {
                 ", contryTime=" + contryCallsTime +
                 ", distanceCallsTime=" + distanceCallsTime +
                 '}';
+    }
+
+    @Override
+    public int compareTo(PhoneEntity o) {
+        return getName().compareTo(o.getName());
     }
 }

@@ -2,6 +2,7 @@ import randgenerators.CreditCardGen;
 import randgenerators.RandomGenerator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ServiceData {
 
@@ -27,6 +28,7 @@ public class ServiceData {
         addDebitCredit();
         addCountryTime();
         addDistanceTime();
+        addAbroad();
         clients.add(client);
     }
 
@@ -51,6 +53,10 @@ public class ServiceData {
         client.setDistanceCallsTime(gen.generateTime());
     }
 
+    private void addAbroad(){
+        client.setAbroad(gen.randBool());
+    }
+
     private void fullDb(){
         for (int i = 0; i < 40; i++) {
             createClient();
@@ -71,6 +77,43 @@ public class ServiceData {
             System.out.println("DistanceTime " + client.getDistanceCallsTime() + " min");
             System.out.println("--------------");
             System.out.println("**************");
+        }
+    }
+
+    public void sortByName(){
+        Collections.sort(clients);
+        for(PhoneEntity client : clients){
+            System.out.println(" ");
+            System.out.println("Id " + client.getId());
+            System.out.println("Name " + client.getName());
+            System.out.println("Sourname " + client.getSourname());
+            System.out.println("Patronymic " + client.getPatronymic());
+            System.out.println("Debet " + client.getDebet() + " USD");
+            System.out.println("Credit " + client.getCredit() + " USD");
+            System.out.println("CardNum " + client.getCreditCardNum());
+            System.out.println("ContryTime " + client.getContryCallsTime() + " min");
+            System.out.println("DistanceTime " + client.getDistanceCallsTime() + " min");
+            System.out.println("--------------");
+            System.out.println("**************");
+        }
+    }
+
+    public void abroadCall(){
+        for(PhoneEntity client : clients){
+            if(client.isAbroad()){
+            System.out.println(" ");
+            System.out.println("Id " + client.getId());
+            System.out.println("Name " + client.getName());
+            System.out.println("Sourname " + client.getSourname());
+            System.out.println("Patronymic " + client.getPatronymic());
+            System.out.println("Debet " + client.getDebet() + " USD");
+            System.out.println("Credit " + client.getCredit() + " USD");
+            System.out.println("CardNum " + client.getCreditCardNum());
+            System.out.println("ContryTime " + client.getContryCallsTime() + " min");
+            System.out.println("DistanceTime " + client.getDistanceCallsTime() + " min");
+            System.out.println("--------------");
+            System.out.println("**************");
+            }
         }
     }
 }
