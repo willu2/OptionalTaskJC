@@ -9,26 +9,28 @@ import java.util.Random;
 
 public class RandomGenerator {
 
+    private final String timePattern = "HH:mm";
+    private final int hoursLimit = 24;
+
     public RandomGenerator() {
     }
 
-    public String generateTime(){
+    public String generateTime(){  //generate random calls time
     Random generator = new Random(/*599999*/);
         SimpleDateFormat dateFormat = new SimpleDateFormat(
                 "yyyy-MM-dd hh:mm:ss");
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
-        DateTimeFormatter formatterMin = DateTimeFormatter.ofPattern("mm");
+        DateTimeFormatter formatterMin = DateTimeFormatter.ofPattern(timePattern);
 
-        //for (int i = 0; i < 4; i++) {
+
             LocalDateTime time = LocalDateTime.of(LocalDate.now(),
-                    LocalTime.of(generator.nextInt(24), generator.nextInt(60),
+                    LocalTime.of(generator.nextInt(hoursLimit), generator.nextInt(60),
                             generator.nextInt(60), generator.nextInt(999999999 + 1)));
-            //System.out.println(time.format(formatterMin));
-        //}
+
         return time.format(formatterMin);
     }
 
-    public String generStrit(int length) {
+    public String generStrit(int length) {  //generate random strit name
         Random random = new Random();
         int number = 0;
         final int alphabetLength = 'Z' - 'A' + 1;
@@ -41,7 +43,7 @@ public class RandomGenerator {
         return result.toString() + " №:" + number;
     }
 
-    public int generDebit(boolean debit) {
+    public int generDebit(boolean debit) { //and credit (false)
         int money;
         Random generator = new Random();
         if(debit){
@@ -52,7 +54,7 @@ public class RandomGenerator {
         return money;
     }
 
-    public boolean randBool(){
+    public boolean randBool(){  //return random bool value
         Random r = new Random();
         return r.nextBoolean();
     }

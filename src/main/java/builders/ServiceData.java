@@ -1,20 +1,20 @@
 package builders;
 
 import entity.PhoneEntity;
+import menu.DisplayDataFormat;
 import randgenerators.CreditCardGen;
 import randgenerators.NamesGenerator;
 import randgenerators.RandomGenerator;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ServiceData {
 
     private ArrayList<PhoneEntity> clients;
     private RandomGenerator gen;
     private NamesGenerator namesGen;
+    private PhoneEntity client;
 
-    PhoneEntity client;
     public static int id = 1;
 
     public ServiceData() {
@@ -22,6 +22,12 @@ public class ServiceData {
         gen = new RandomGenerator();
         namesGen = new NamesGenerator();
         fullDb();
+    }
+
+    private void fullDb(){
+        for (int i = 0; i < 40; i++) {
+            createClient();
+        }
     }
 
     private void createClient(){
@@ -61,63 +67,15 @@ public class ServiceData {
         client.setAbroad(gen.randBool());
     }
 
-    private void fullDb(){
-        for (int i = 0; i < 40; i++) {
-            createClient();
-        }
-    }
-
     public void clientVisor(){
-        for(PhoneEntity client : clients){
-            System.out.println(" ");
-            System.out.println("Id " + client.getId());
-            System.out.println("Name " + client.getName());
-            System.out.println("Sourname " + client.getSourname());
-            System.out.println("Patronymic " + client.getPatronymic());
-            System.out.println("Debet " + client.getDebet() + " USD");
-            System.out.println("Credit " + client.getCredit() + " USD");
-            System.out.println("CardNum " + client.getCreditCardNum());
-            System.out.println("ContryTime " + client.getContryCallsTime() + " min");
-            System.out.println("DistanceTime " + client.getDistanceCallsTime() + " min");
-            System.out.println("--------------");
-            System.out.println("**************");
-        }
+        DisplayDataFormat.clientVisor(clients);
     }
 
     public void sortByName(){
-        Collections.sort(clients);
-        for(PhoneEntity client : clients){
-            System.out.println(" ");
-            System.out.println("Id " + client.getId());
-            System.out.println("Name " + client.getName());
-            System.out.println("Sourname " + client.getSourname());
-            System.out.println("Patronymic " + client.getPatronymic());
-            System.out.println("Debet " + client.getDebet() + " USD");
-            System.out.println("Credit " + client.getCredit() + " USD");
-            System.out.println("CardNum " + client.getCreditCardNum());
-            System.out.println("ContryTime " + client.getContryCallsTime() + " min");
-            System.out.println("DistanceTime " + client.getDistanceCallsTime() + " min");
-            System.out.println("--------------");
-            System.out.println("**************");
-        }
+        DisplayDataFormat.sortByName(clients);
     }
 
     public void abroadCall(){
-        for(PhoneEntity client : clients){
-            if(client.isAbroad()){
-            System.out.println(" ");
-            System.out.println("Id " + client.getId());
-            System.out.println("Name " + client.getName());
-            System.out.println("Sourname " + client.getSourname());
-            System.out.println("Patronymic " + client.getPatronymic());
-            System.out.println("Debet " + client.getDebet() + " USD");
-            System.out.println("Credit " + client.getCredit() + " USD");
-            System.out.println("CardNum " + client.getCreditCardNum());
-            System.out.println("ContryTime " + client.getContryCallsTime() + " min");
-            System.out.println("DistanceTime " + client.getDistanceCallsTime() + " min");
-            System.out.println("--------------");
-            System.out.println("**************");
-            }
-        }
+        DisplayDataFormat.abroadCall(clients);
     }
 }
