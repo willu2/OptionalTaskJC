@@ -4,7 +4,7 @@ public class MenuBuilder {
 
     public MenuBuilder() {}
 
-    //print main text
+    //print main text menu
     public void mainManu(){
         System.out.println("Main menu :> ");
         System.out.println(" 1 :> Unlimit abroad calls  (01:40)");
