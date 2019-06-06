@@ -11,7 +11,7 @@ public class PhoneEntity implements Comparable<PhoneEntity>{
     private int credit;     // money---->
 
     private String contryCallsTime;  //done
-    private String distanceCallsTime;  //done
+    private String abroadCallsTime;  //done
 
     private boolean abroad = false;
 
@@ -34,7 +34,7 @@ public class PhoneEntity implements Comparable<PhoneEntity>{
 
     public PhoneEntity(String contryTime, String distanceCallsTime) {
         this.contryCallsTime = contryTime;
-        this.distanceCallsTime = distanceCallsTime;
+        this.abroadCallsTime = distanceCallsTime;
     }
 
     public int getId() {
@@ -109,12 +109,12 @@ public class PhoneEntity implements Comparable<PhoneEntity>{
         this.contryCallsTime = contryCallsTime;
     }
 
-    public String getDistanceCallsTime() {
-        return distanceCallsTime;
+    public String getAbroadCallsTime() {
+        return abroadCallsTime;
     }
 
-    public void setDistanceCallsTime(String distanceCallsTime) {
-        this.distanceCallsTime = distanceCallsTime;
+    public void setAbroadCallsTime(String abroadCallsTime) {
+        this.abroadCallsTime = abroadCallsTime;
     }
 
     public boolean isAbroad() {
@@ -137,7 +137,7 @@ public class PhoneEntity implements Comparable<PhoneEntity>{
                 ", debet=" + debet +
                 ", credit=" + credit +
                 ", contryTime=" + contryCallsTime +
-                ", distanceCallsTime=" + distanceCallsTime +
+                ", abroadCallsTime=" + abroadCallsTime +
                 '}';
     }
 

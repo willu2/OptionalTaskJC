@@ -8,7 +8,12 @@ public class DisplayDataFormat {
 
     public static void clientVisor(ArrayList<PhoneEntity> clients){
         for(PhoneEntity client : clients){
-           showAllData(client);
+            String str = client.getAbroadCallsTime();
+            str = str.replaceAll(":","");
+            int time = Integer.parseInt(str);
+            if (time < 140) {
+                showAllData(client);
+            }
         }
     }
 
@@ -37,7 +42,7 @@ public class DisplayDataFormat {
             System.out.println("Credit " + client.getCredit() + " USD");
             System.out.println("CardNum " + client.getCreditCardNum());
             System.out.println("ContryTime " + client.getContryCallsTime() + " min");
-            System.out.println("DistanceTime " + client.getDistanceCallsTime() + " min");
+            System.out.println("DistanceTime " + client.getAbroadCallsTime() + " min");
             System.out.println("--------------");
             System.out.println("**************");
     }

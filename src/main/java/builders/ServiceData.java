@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class ServiceData {
 
-    private ArrayList<PhoneEntity> clients;
+    private ArrayList<PhoneEntity> clients;  //list with clients
     private RandomGenerator gen;
     private NamesGenerator namesGen;
     private PhoneEntity client;
@@ -30,7 +30,7 @@ public class ServiceData {
         }
     }
 
-    private void createClient(){
+    private void createClient(){  //create client automaticaly with random data
         client = new PhoneEntity(namesGen.getName(), namesGen.getLastName(), namesGen.getPatronymic());
         client.setId(id++);
         addAdress();
@@ -60,7 +60,7 @@ public class ServiceData {
     }
 
     private void addDistanceTime(){
-        client.setDistanceCallsTime(gen.generateTime());
+        client.setAbroadCallsTime(gen.generateTime());
     }
 
     private void addAbroad(){
