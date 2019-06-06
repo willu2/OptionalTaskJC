@@ -2,16 +2,16 @@ package entity;
 
 public class PhoneEntity implements Comparable<PhoneEntity>{
     private int id;
-    private String name;        //done
-    private String sourname;    //done
-    private String patronymic;  //done
-    private String adress;      //done
-    private String creditCardNum; //done
+    private String name;
+    private String sourname;
+    private String patronymic;
+    private String adress;
+    private String creditCardNum;
     private int debet;      // <----money
     private int credit;     // money---->
 
-    private String contryCallsTime;  //done
-    private String abroadCallsTime;  //done
+    private String contryCallsTime;
+    private String abroadCallsTime;
 
     private boolean abroad = false;
 
