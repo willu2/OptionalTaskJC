@@ -31,10 +31,10 @@ public class ShowMenu {
                         data.clientVisor();
                         break;
                     case 2:
-                        data.sortByName();
+                        data.abroadCall();
                         break;
                     case 3:
-                        data.abroadCall();
+                        data.sortByName();
                         break;
                     case 0:
                         exit = true;
