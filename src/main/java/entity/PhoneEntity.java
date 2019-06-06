@@ -1,3 +1,5 @@
+package entity;
+
 public class PhoneEntity implements Comparable<PhoneEntity>{
     private int id;
     private String name;        //done
@@ -125,7 +127,7 @@ public class PhoneEntity implements Comparable<PhoneEntity>{
 
     @Override
     public String toString() {
-        return "PhoneEntity{" +
+        return "entity.PhoneEntity{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", sourname='" + sourname + '\'' +

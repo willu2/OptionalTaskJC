@@ -1,3 +1,5 @@
+package randgenerators;
+
 import java.util.Random;
 
 public class NamesGenerator {
