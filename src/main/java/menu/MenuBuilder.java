@@ -16,7 +16,4 @@ public class MenuBuilder {
         System.out.println("Please select menu item :> ");
     }
 
-    public void numbersEnter(){
-        System.out.println("Enter pizza numbers (max-> 10):");
-    }
 }

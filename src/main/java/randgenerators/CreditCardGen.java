@@ -1,8 +1,8 @@
 package randgenerators;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
-import java.util.Vector;
 
 public class CreditCardGen {
 
@@ -38,7 +38,7 @@ public class CreditCardGen {
 
         String reversedCCnumberString = strrev(ccnumber);
 
-        List<Integer> reversedCCnumberList = new Vector<Integer>();
+        List<Integer> reversedCCnumberList = new ArrayList<Integer>();
         for (int i = 0; i < reversedCCnumberString.length(); i++) {
             reversedCCnumberList.add(new Integer(String
                     .valueOf(reversedCCnumberString.charAt(i))));

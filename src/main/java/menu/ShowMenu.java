@@ -8,8 +8,6 @@ import java.io.InputStreamReader;
 
 public class ShowMenu {
 
-    private int itemMenu = 0;
-
     ServiceData data;
     MenuBuilder menu;
 
